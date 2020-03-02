@@ -1,11 +1,12 @@
+import 'package:bytebank2/database/dao/contact_dao.dart';
 import 'package:flutter/material.dart';
 
-import 'database/app_database.dart';
 import 'screens/dashboard.dart';
 
 void main() {
+  final ContactDao _dao = ContactDao();
   runApp(BytebankApp());
-  findAll().then((contacts) => debugPrint(contacts.toString()));
+  _dao.findAll().then((contacts) => debugPrint(contacts.toString()));
 }
 
 class BytebankApp extends StatelessWidget {
